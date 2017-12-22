@@ -35,8 +35,6 @@ class MarvelData{
             }
         }
     }
-    //http://gateway.marvel.com/v1/public/comics?ts=swedftvgybhnj&apikey=e4760158eea16317d8ca0f8b258b9b3a&hash=73e58dc4afc424242e266324efd40929
-    //http://gateway.marvel.com/v1/public/comics?ts=swedftvgybhnj&apikey=e4760158eea16317d8ca0f8b258b9b3a&hash=73E58DC4AFC424242E266324EFD40929
     func addingParameters(){
            let md5Str = MD5("\(ts)\(privateKey)\(publicKey)")
         parameters = ["ts": ts ,"apikey":publicKey, "hash":md5Str.lowercased()]

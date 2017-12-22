@@ -10,6 +10,6 @@ import Foundation
 class ViewModel{
     var marvelData:MarvelData?
     init() {
-        marvelData = MarvelData(url: "http://gateway.marvel.com/v1/public/comics")
+        marvelData = MarvelData(url: "http://gateway.marvel.com/v1/public/characters")
     }
 }

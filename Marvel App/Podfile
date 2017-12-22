@@ -8,5 +8,5 @@ target 'Marvel App' do
   pod 'Kingfisher', '~> 4.0'
   pod 'Alamofire', '~> 4.5'
   pod 'SwiftHash'
-
+  pod 'SwiftyJSON'
 end
