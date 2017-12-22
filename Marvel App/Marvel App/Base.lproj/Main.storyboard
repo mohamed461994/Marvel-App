@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="101.19940029985008"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Marvel Detailes Table View Controller-->
         <scene sceneID="Mqd-Mc-s3g">
             <objects>
-                <tableViewController id="vzA-m9-SMm" sceneMemberID="viewController">
+                <tableViewController id="vzA-m9-SMm" customClass="MarvelDetailesTableViewController" customModule="Marvel_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eFM-hX-uvd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,38 +184,33 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="224" id="zg0-it-NwQ" userLabel="Comics">
-                                        <rect key="frame" x="0.0" y="535" width="375" height="224"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="363" id="zg0-it-NwQ" userLabel="Comics">
+                                        <rect key="frame" x="0.0" y="535" width="375" height="363"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zg0-it-NwQ" id="Blr-uh-6m5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="223.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="362.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e0g-o4-sPs">
-                                                    <rect key="frame" x="8" y="8" width="359" height="208"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e0g-o4-sPs">
+                                                    <rect key="frame" x="8" y="8" width="359" height="201"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tyP-wA-Nqm">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="201" id="Wlz-6i-Q8K"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tyP-wA-Nqm">
                                                         <size key="itemSize" width="103" height="181"/>
-                                                        <size key="headerReferenceSize" width="50" height="27"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2bF-jE-7Ii">
-                                                            <rect key="frame" x="0.0" y="27" width="103" height="181"/>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell" id="2bF-jE-7Ii" customClass="MarvelCollectionViewCell" customModule="Marvel_App" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="10" width="103" height="181"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="103" height="181"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvel" translatesAutoresizingMaskIntoConstraints="NO" id="VFz-hW-e7Z">
-                                                                        <rect key="frame" x="5" y="0.0" width="98" height="120"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="120" id="2UE-UD-SHp"/>
-                                                                            <constraint firstAttribute="width" constant="98" id="h3U-Ts-vrp"/>
-                                                                        </constraints>
-                                                                    </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rvl-i2-CZ1">
                                                                         <rect key="frame" x="10" y="125" width="83" height="47"/>
                                                                         <subviews>
@@ -232,6 +227,13 @@
                                                                             <constraint firstAttribute="trailing" secondItem="fhe-tI-Unp" secondAttribute="trailing" id="yDC-Ip-K1v"/>
                                                                         </constraints>
                                                                     </stackView>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvel" translatesAutoresizingMaskIntoConstraints="NO" id="VFz-hW-e7Z">
+                                                                        <rect key="frame" x="5" y="0.0" width="98" height="120"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="120" id="2UE-UD-SHp"/>
+                                                                            <constraint firstAttribute="width" constant="98" id="h3U-Ts-vrp"/>
+                                                                        </constraints>
+                                                                    </imageView>
                                                                 </subviews>
                                                             </view>
                                                             <constraints>
@@ -244,35 +246,22 @@
                                                             </constraints>
                                                         </collectionViewCell>
                                                     </cells>
-                                                    <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bjB-eN-fb3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="27"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMICS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ay-0d-e3v">
-                                                                <rect key="frame" x="8" y="8" width="301" height="19"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="1Ay-0d-e3v" firstAttribute="leading" secondItem="bjB-eN-fb3" secondAttribute="leading" constant="8" id="09x-0b-TAq"/>
-                                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="1Ay-0d-e3v" secondAttribute="trailing" constant="50" id="baJ-te-Um0"/>
-                                                            <constraint firstItem="1Ay-0d-e3v" firstAttribute="top" secondItem="bjB-eN-fb3" secondAttribute="top" constant="8" id="fa7-eM-uw4"/>
-                                                            <constraint firstAttribute="bottom" secondItem="1Ay-0d-e3v" secondAttribute="bottom" id="ptc-Cx-asu"/>
-                                                        </constraints>
-                                                    </collectionReusableView>
                                                     <connections>
                                                         <outlet property="dataSource" destination="vzA-m9-SMm" id="iMY-hM-6s9"/>
                                                         <outlet property="delegate" destination="vzA-m9-SMm" id="lA0-OQ-8EP"/>
                                                     </connections>
                                                 </collectionView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="e0g-o4-sPs" firstAttribute="top" secondItem="Blr-uh-6m5" secondAttribute="top" constant="8" id="ONx-DE-Cba"/>
+                                                <constraint firstAttribute="trailing" secondItem="e0g-o4-sPs" secondAttribute="trailing" constant="8" id="PI9-WX-W9r"/>
+                                                <constraint firstItem="e0g-o4-sPs" firstAttribute="leading" secondItem="Blr-uh-6m5" secondAttribute="leading" constant="8" id="xf8-mB-Or8"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="224" id="rRg-o3-Udb">
-                                        <rect key="frame" x="0.0" y="759" width="375" height="224"/>
+                                        <rect key="frame" x="0.0" y="898" width="375" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rRg-o3-Udb" id="Bqu-Sc-JD8">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="223.5"/>
