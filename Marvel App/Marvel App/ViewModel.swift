@@ -12,4 +12,17 @@ class ViewModel{
     init() {
         marvelData = MarvelData(url: "http://gateway.marvel.com/v1/public/characters")
     }
+    func marvelItemCount()-> Int{
+        return (marvelData?.marvelList.count)!
+    }
+    func marvelTite(indexPath:IndexPath)->String{
+        return (marvelData?.marvelList[indexPath.row].title)!
+    }
+    func marvelURL(indexPath:IndexPath)->URL{
+        return URL(string:  (marvelData?.marvelList[indexPath.row].img_URL)!)!
+    }
+    func marvelId(indexPath:IndexPath)->Int{
+        return (marvelData?.marvelList[indexPath.row].id)!
+    }
+    
 }

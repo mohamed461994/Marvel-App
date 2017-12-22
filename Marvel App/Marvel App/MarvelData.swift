@@ -6,6 +6,7 @@
 //  Copyright © 2017 MohamedSh. All rights reserved.
 //
 
+let notificationForReloadTable="reloadMarvelData"
 import Foundation
 import Alamofire
 import SwiftHash
@@ -15,6 +16,13 @@ class MarvelData{
     /// this varible is to detect if request is from first view controller or not
     private var requestedFromFirstViewController = true
     private var url:String?
+    private var parseIsDone:Bool?{
+        didSet{
+            /// push notification to reload data in first view controllet
+            let notifiReload = Notification.Name(notificationForReloadTable)
+            NotificationCenter.default.post(name: notifiReload, object: nil)
+        }
+    }
     /// this varaible store parameter as dictionary of type [String:Any]
     private var parameters: Parameters?
     private var publicKey:String = "e4760158eea16317d8ca0f8b258b9b3a"
@@ -37,6 +45,7 @@ class MarvelData{
                                              title: item["name"].stringValue,
                                              img_URL: "\(item["thumbnail"]["path"].stringValue).\(item["thumbnail"]["extension"].stringValue)"))
                 }
+                self.parseIsDone=true
             }
         }
     }
