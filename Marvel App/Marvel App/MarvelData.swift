@@ -9,12 +9,12 @@
 import Foundation
 import Alamofire
 import SwiftHash
+import SwiftyJSON
 class MarvelData{
+    var marvelList:[MarvelItem]=[]
     /// this varible is to detect if request is from first view controller or not
     private var requestedFromFirstViewController = true
     private var url:String?
-    /// this varible used for pagginatin to get more data from the API
-    private var requestPageNumberOfMoviesData = 1
     /// this varaible store parameter as dictionary of type [String:Any]
     private var parameters: Parameters?
     private var publicKey:String = "e4760158eea16317d8ca0f8b258b9b3a"
@@ -29,9 +29,14 @@ class MarvelData{
         let utilityQueue=DispatchQueue.global(qos: .utility)
         print(url!,"/?ts=(ts)&apikey=\(publicKey)&hash=",MD5("\(ts)\(privateKey)\(publicKey)"))
         Alamofire.request(url!, method: .get,parameters: parameters).responseJSON(queue: utilityQueue){ response in
-            if let json = response.result.value {
-               print(json)
-                //self.jsonData=json
+            if let value = response.result.value {
+               let json = JSON(value)
+                let result = json["data"]["results"].arrayValue
+                for item in result{
+                    self.marvelList.append(MarvelItem(id: item["id"].intValue,
+                                             title: item["name"].stringValue,
+                                             img_URL: "\(item["thumbnail"]["path"].stringValue).\(item["thumbnail"]["extension"].stringValue)"))
+                }
             }
         }
     }
