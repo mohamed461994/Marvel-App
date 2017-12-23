@@ -48,24 +48,30 @@ class SingleMarvelData{
     var currentCount = 0
     func getURL(urls: [String] , que: DispatchQueue , flag:String){
         for url in urls {
-            print(url)
             Alamofire.request(url, method:.get ,parameters: parameters).responseJSON(queue: que){ response in
                 if let value = response.result.value {
                     let json = JSON(value)
                     let imgURL = "\(json["data"]["results"][0]["images"][0]["path"]).\(json["data"]["results"][0]["images"][0]["extension"])"
-                  //  print(imgURL)
+                    self.insertToList(url :imgURL, flage: flag)
+                    //print(imgURL)
                     self.listComicsImagesURL.append(imgURL)
                     self.currentCount += 1
-                    //print(self.countOfAllRequeiredURL)
-                    // print(self.currentCount)
                     if self.currentCount == self.countOfAllRequeiredURL{
-                        print(self.listComicsImagesURL.count)
-                        for i in self.listComicsImagesURL{
-                            print(i)
-                        }
+                            print(self.countOfAllRequeiredURL)
+                            print(self.listStoreisImagesURL.count)
+                            print(self.listEventsImagesURL.count)
+                            print(self.listSeriesImagesURL.count)
+                            print(self.listComicsImagesURL.count)
+                    
                     }
                 }
             }
         }
+    }
+    func insertToList(url :String , flage: String){
+        if flage == "events" {listEventsImagesURL.append(url)}
+        else if flage == "stores" {listStoreisImagesURL.append(url)}
+        else if flage == "series"{listSeriesImagesURL.append(url)}
+        else if flage == "comics"{listComicsImagesURL.append(url)}
     }
 }
