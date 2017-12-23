@@ -16,6 +16,7 @@ class SingleMarvelData{
     private var privateKey:String = "2afbd8d0b63f4727c6a8d0c3f240ddfcf5c89d71"
     private var ts = NSDate().timeIntervalSince1970.description
     let utilityQueue=DispatchQueue.global(qos: .utility)
+    let userInitiated = DispatchQueue.global(qos: .userInitiated)
     var listComicsImagesURL:[String]=[]
     var listSeriesImagesURL:[String]=[]
     var listStoreisImagesURL:[String]=[]
@@ -29,21 +30,41 @@ class SingleMarvelData{
     }
     init(comics: [String],series: [String],stores: [String],events: [String]){
         addingParameters()
+        getComicStorieEventImgFromJSON(comics: comics, series: series, stores: stores, events: events)
     }
     func addingParameters(){
         let md5Str = MD5("\(ts)\(privateKey)\(publicKey)")
         parameters = ["ts": ts ,"apikey":publicKey, "hash":md5Str.lowercased()]
         
     }
-    func getComicStorieEventImgFromJSON(urls:[String], flag:String){
-        for url in urls{
-            Alamofire.request(url, method:.get ,parameters: parameters).responseJSON(queue: utilityQueue){ response in
+    func getComicStorieEventImgFromJSON(comics: [String],series: [String],stores: [String],events: [String]){
+        countOfAllRequeiredURL = comics.count + series.count + stores.count + events.count
+        getURL(urls: comics, que: userInitiated ,flag:"comics")
+        getURL(urls: series, que: utilityQueue , flag: "series")
+        getURL(urls: stores, que: userInitiated, flag: "stores")
+        getURL(urls: events, que: utilityQueue, flag: "events")
+    }
+    var countOfAllRequeiredURL = 0
+    var currentCount = 0
+    func getURL(urls: [String] , que: DispatchQueue , flag:String){
+        for url in urls {
+            print(url)
+            Alamofire.request(url, method:.get ,parameters: parameters).responseJSON(queue: que){ response in
                 if let value = response.result.value {
                     let json = JSON(value)
                     let imgURL = "\(json["data"]["results"][0]["images"][0]["path"]).\(json["data"]["results"][0]["images"][0]["extension"])"
-                    print(imgURL)
+                  //  print(imgURL)
+                    self.listComicsImagesURL.append(imgURL)
+                    self.currentCount += 1
+                    //print(self.countOfAllRequeiredURL)
+                    // print(self.currentCount)
+                    if self.currentCount == self.countOfAllRequeiredURL{
+                        print(self.listComicsImagesURL.count)
+                        for i in self.listComicsImagesURL{
+                            print(i)
+                        }
+                    }
                 }
-                
             }
         }
     }

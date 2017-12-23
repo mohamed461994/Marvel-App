@@ -17,8 +17,10 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var imgMainCharchter: UIImageView!
+    var viewModel:ViewModelSingleMarvel?
     var marvelPassedData:MarvelItem?{
         didSet{
+            viewModel=ViewModelSingleMarvel(comics: getComicsURI() , series: getSeriesURI(), stores: getStoriesURI(), events: getEventsURI())
         }
     }
     override func viewDidLoad() {
@@ -59,5 +61,17 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
         }
         /// case if its series CollectionView
         return (marvelPassedData?.series.count)!
+    }
+    func getComicsURI()->[String]{
+        return (marvelPassedData?.comics.map{$0.resourceURI!})!
+    }
+    func getSeriesURI()->[String]{
+        return (marvelPassedData?.series.map{$0.resourceURI!})!
+    }
+    func getStoriesURI()->[String]{
+        return (marvelPassedData?.stories.map{$0.resourceURI!})!
+    }
+    func getEventsURI()->[String]{
+        return (marvelPassedData?.events.map{$0.resourceURI!})!
     }
 }
