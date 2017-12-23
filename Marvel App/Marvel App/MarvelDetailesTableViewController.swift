@@ -33,13 +33,13 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! MarvelCollectionViewCell
-        if collectionView == comicsCollectionView{
+        if collectionView == comicsCollectionView && (marvelPassedData?.comics.count)! > 0{
             cell.colectionCellLabaTitle.text = marvelPassedData?.comics[indexPath.row].name!
-        }else if collectionView == EventsCollectionView{
+        }else if collectionView == EventsCollectionView && (marvelPassedData?.events.count)! > 0{
             cell.colectionCellLabaTitle.text = marvelPassedData?.events[indexPath.row].name!
-        }else if collectionView == storiesCollectionView{
+        }else if collectionView == storiesCollectionView && (marvelPassedData?.stories.count)! > 0{
             cell.colectionCellLabaTitle.text = marvelPassedData?.stories[indexPath.row].name!
-        }else {
+        }else if collectionView == seriesCollectionView && (marvelPassedData?.series.count)! > 0 {
             cell.colectionCellLabaTitle.text = marvelPassedData?.series[indexPath.row].name!
         }
         
@@ -48,15 +48,15 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         /// case if its comics CollectionView
         if collectionView == comicsCollectionView {
-            return marvelPassedData?.comics.count ?? 0
+            return (marvelPassedData?.comics.count)!
         }/// case if its events CollectionView
         else if collectionView == EventsCollectionView{
-            return marvelPassedData?.events.count ?? 0
+            return (marvelPassedData?.events.count)!
         }///case if its series collection
         else if collectionView == storiesCollectionView{
-            return marvelPassedData?.series.count ?? 0
+            return (marvelPassedData?.series.count)!
         }
         /// case if its series CollectionView
-        return marvelPassedData?.stories.count ?? 0
+        return (marvelPassedData?.stories.count)!
     }
 }
