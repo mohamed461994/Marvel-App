@@ -28,13 +28,13 @@ class MarvelData{
     private var publicKey:String = "e4760158eea16317d8ca0f8b258b9b3a"
     private var privateKey:String = "2afbd8d0b63f4727c6a8d0c3f240ddfcf5c89d71"
     private var ts = NSDate().timeIntervalSince1970.description
+    let utilityQueue=DispatchQueue.global(qos: .utility)
     init(url:String ) {
         self.url = url
         addingParameters()
         getJSON()
     }
     private func getJSON(){
-        let utilityQueue=DispatchQueue.global(qos: .utility)
         Alamofire.request(url!, method: .get,parameters: parameters).responseJSON(queue: utilityQueue){ response in
             if let value = response.result.value {
                let json = JSON(value)
@@ -60,10 +60,11 @@ class MarvelData{
             // this line insert comic name as key to the dic and uri as value
             list.append(ComicsStoriesSeriesType(resourceURI: comicStorieEvent["resourceURI"].stringValue ,
                 name: comicStorieEvent["name"].stringValue ))
-        
+            //getComicStorieEventImagesURL(resourceURI: comicStorieEvent["resourceURI"].stringValue)
         }
         return list
     }
+
     func loadMoreData(){
         offset += 10
         parameters!["offset"]=offset
@@ -73,6 +74,6 @@ class MarvelData{
            let md5Str = MD5("\(ts)\(privateKey)\(publicKey)")
 
         parameters = ["ts": ts ,"apikey":publicKey, "hash":md5Str.lowercased() ,"limit" :10 , "offset": offset]
-        //print(ts,"   ",md5Str.lowercased())
+        
     }
 }
