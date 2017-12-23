@@ -12,9 +12,14 @@ struct MarvelItem {
     var title:String?
     var description:String?
     var img_URL:String?
-    var comics:[String:String]=[:]
-    var series:[String:String]=[:]
-    var stories:[String:String]=[:]
-    var events:[String:String]=[:]
+    var comics:[ComicsStoriesSeriesType]=[]
+    var series:[ComicsStoriesSeriesType]=[]
+    var stories:[ComicsStoriesSeriesType]=[]
+    var events:[ComicsStoriesSeriesType]=[]
     
+}
+
+struct ComicsStoriesSeriesType {
+    var resourceURI:String?
+    var name:String?
 }
