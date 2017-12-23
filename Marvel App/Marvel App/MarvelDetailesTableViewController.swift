@@ -34,13 +34,13 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! MarvelCollectionViewCell
         if collectionView == comicsCollectionView{
-            //cell.colectionCellLabaTitle.text = marvelPassedData?.comics.keys[0]
+            cell.colectionCellLabaTitle.text = marvelPassedData?.comics[indexPath.row].name!
         }else if collectionView == EventsCollectionView{
-        
+            cell.colectionCellLabaTitle.text = marvelPassedData?.events[indexPath.row].name!
         }else if collectionView == storiesCollectionView{
-            
+            cell.colectionCellLabaTitle.text = marvelPassedData?.stories[indexPath.row].name!
         }else {
-            
+            cell.colectionCellLabaTitle.text = marvelPassedData?.series[indexPath.row].name!
         }
         
         return cell
