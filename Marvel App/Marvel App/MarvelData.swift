@@ -35,23 +35,36 @@ class MarvelData{
     }
     private func getJSON(){
         let utilityQueue=DispatchQueue.global(qos: .utility)
-        print(url!,"/?ts=(ts)&apikey=\(publicKey)&hash=",MD5("\(ts)\(privateKey)\(publicKey)"))
+        //print(url!,"/?ts=(ts)&apikey=\(publicKey)&hash=",MD5("\(ts)\(privateKey)\(publicKey)"))
         Alamofire.request(url!, method: .get,parameters: parameters).responseJSON(queue: utilityQueue){ response in
             if let value = response.result.value {
                let json = JSON(value)
                 let result = json["data"]["results"].arrayValue
                 for item in result{
                     self.marvelList.append(MarvelItem(id: item["id"].intValue,
-                                             title: item["name"].stringValue,
-                                             img_URL: "\(item["thumbnail"]["path"].stringValue).\(item["thumbnail"]["extension"].stringValue)"))
+                                  title: item["name"].stringValue,
+                                  img_URL: "\(item["thumbnail"]["path"].stringValue).\(item["thumbnail"]["extension"].stringValue)",
+                                  comics: self.getComicsEventsStoriesList(listJSON: item["comics"]["items"].arrayValue),
+                                  series: self.getComicsEventsStoriesList(listJSON: item["series"]["items"].arrayValue),
+                                  stories: self.getComicsEventsStoriesList(listJSON: item["stories"]["items"].arrayValue),
+                                  events: self.getComicsEventsStoriesList(listJSON: item["events"]["items"].arrayValue)
+                    ))
                 }
                 self.parseIsDone=true
             }
         }
     }
+    func getComicsEventsStoriesList(listJSON: [JSON])->Dictionary<String,String>{
+        var list:Dictionary<String,String>=[:]
+        for comicStorieEvent in listJSON{
+            // this line insert comic name as key to the dic and uri as value
+            list[comicStorieEvent["name"].stringValue] = comicStorieEvent["resourceURI"].stringValue
+        }
+        return list
+    }
     func addingParameters(){
            let md5Str = MD5("\(ts)\(privateKey)\(publicKey)")
         parameters = ["ts": ts ,"apikey":publicKey, "hash":md5Str.lowercased()]
-        print(ts,"   ",md5Str.lowercased())
+        //print(ts,"   ",md5Str.lowercased())
     }
 }
