@@ -27,5 +27,10 @@ class ViewModel{
     func getSelecctedMarvelData(indexPath:IndexPath)-> MarvelItem{
         return (marvelData?.marvelList[indexPath.row])!
     }
-
+    func loadMoreData(){
+        marvelData?.loadMoreData()
+    }
+    func numberOfRows()->Int{
+        return (marvelData?.marvelList.count)!
+    }
 }
