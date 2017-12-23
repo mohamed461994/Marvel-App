@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="142"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Lc-7r-WES" id="oVZ-WZ-Wsx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="141.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ymR-Kk-Hl2">
@@ -526,6 +526,8 @@
                     <connections>
                         <outlet property="EventsCollectionView" destination="iK4-yn-ubL" id="HNn-R0-ygT"/>
                         <outlet property="comicsCollectionView" destination="e0g-o4-sPs" id="OIE-Vn-ppx"/>
+                        <outlet property="lblDescription" destination="PM8-xb-6Vw" id="BrS-IA-d1F"/>
+                        <outlet property="lblTitle" destination="TVG-vY-Ytp" id="cJk-21-7PX"/>
                         <outlet property="seriesCollectionView" destination="sjE-Ue-uqz" id="Wkf-Jd-3dA"/>
                     </connections>
                 </tableViewController>
