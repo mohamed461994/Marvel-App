@@ -51,15 +51,17 @@ class MarvelData{
                                   events: self.getComicsEventsStoriesList(listJSON: item["events"]["items"].arrayValue)
                     ))
                 }
-                self.parseIsDone=true
+                self.parseIsDone = true
             }
         }
     }
-    func getComicsEventsStoriesList(listJSON: [JSON])->Dictionary<String,String>{
-        var list:Dictionary<String,String>=[:]
+    func getComicsEventsStoriesList(listJSON: [JSON])->[ComicsStoriesSeriesType]{
+        var list:[ComicsStoriesSeriesType]=[]
         for comicStorieEvent in listJSON{
             // this line insert comic name as key to the dic and uri as value
-            list[comicStorieEvent["name"].stringValue] = comicStorieEvent["resourceURI"].stringValue
+            list.append(ComicsStoriesSeriesType(resourceURI: comicStorieEvent["resourceURI"].stringValue ,
+                name: comicStorieEvent["name"].stringValue ))
+        
         }
         return list
     }
