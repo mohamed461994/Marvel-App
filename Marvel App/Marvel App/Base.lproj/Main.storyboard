@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZIx-0X-YmL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i4h-nk-6zf">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MarvelCell" rowHeight="142" id="7Lc-7r-WES" customClass="MarvelTableViewCell" customModule="Marvel_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="142"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Lc-7r-WES" id="oVZ-WZ-Wsx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="141.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ymR-Kk-Hl2">
@@ -59,6 +59,7 @@
                                         <connections>
                                             <outlet property="lbltitle" destination="Lu8-y3-xmo" id="2jb-sp-NCH"/>
                                             <outlet property="marvelImg" destination="ymR-Kk-Hl2" id="sbB-hs-STw"/>
+                                            <segue destination="vzA-m9-SMm" kind="show" identifier="SelecteMarvel" id="QSp-i2-T5a"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -77,13 +78,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="abW-AO-PAk"/>
                     <connections>
                         <outlet property="tableView" destination="i4h-nk-6zf" id="QN5-Dr-i8O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="101.19940029985008"/>
+            <point key="canvasLocation" x="456.80000000000001" y="101.19940029985008"/>
         </scene>
         <!--Marvel Detailes Table View Controller-->
         <scene sceneID="Mqd-Mc-s3g">
@@ -151,12 +153,12 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zgO-JB-woU">
-                                                    <rect key="frame" x="20" y="115" width="355" height="57.5"/>
+                                                    <rect key="frame" x="20" y="115" width="355" height="72"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PM8-xb-6Vw">
-                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="57.5"/>
-                                                            <string key="text">its can do any thing any time to be great you need hard work fuck offits can do any thing any time to be great you need hard work fuck off</string>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PM8-xb-6Vw">
+                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="72"/>
+                                                            <string key="text">its can do any thing any time to be great you need hard work fuck offits can do any thing any time to be great you need hard work fuck offwork fuck offits can  fuck offwork fuck offits can </string>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -244,6 +246,10 @@
                                                                 <constraint firstItem="VFz-hW-e7Z" firstAttribute="leading" secondItem="2bF-jE-7Ii" secondAttribute="leading" constant="5" id="puh-s7-Sxb"/>
                                                                 <constraint firstAttribute="trailing" secondItem="VFz-hW-e7Z" secondAttribute="trailing" id="vGG-Hm-QOh"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="colectionCellImage" destination="VFz-hW-e7Z" id="rlV-7z-0oQ"/>
+                                                                <outlet property="colectionCellLabaTitle" destination="fhe-tI-Unp" id="qqg-dJ-q3H"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                     <connections>
@@ -328,6 +334,10 @@
                                                                 <constraint firstItem="3c8-uq-42G" firstAttribute="leading" secondItem="yq1-8U-QHR" secondAttribute="leading" constant="5" id="rZJ-Rf-xUd"/>
                                                                 <constraint firstAttribute="trailing" secondItem="xZ9-cn-F7J" secondAttribute="trailing" constant="2" id="s5r-bt-cNA"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="colectionCellImage" destination="3c8-uq-42G" id="3gd-dB-v4x"/>
+                                                                <outlet property="colectionCellLabaTitle" destination="wUh-L4-Ix6" id="JDT-5V-1KV"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                     <connections>
@@ -413,6 +423,10 @@
                                                                 <constraint firstItem="UXQ-zc-0Qw" firstAttribute="leading" secondItem="wB3-LS-JiX" secondAttribute="leading" constant="2" id="fv1-XK-idd"/>
                                                                 <constraint firstAttribute="trailing" secondItem="UXQ-zc-0Qw" secondAttribute="trailing" constant="2" id="j4k-VQ-u3c"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="colectionCellImage" destination="D2s-Fg-LOk" id="ivx-6r-g19"/>
+                                                                <outlet property="colectionCellLabaTitle" destination="lnz-Ze-Xbb" id="eey-as-bDi"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                     <connections>
@@ -497,6 +511,10 @@
                                                                 <constraint firstAttribute="trailing" secondItem="FlU-WQ-chj" secondAttribute="trailing" id="ckb-mO-qbA"/>
                                                                 <constraint firstItem="NLg-PK-aXX" firstAttribute="top" secondItem="FlU-WQ-chj" secondAttribute="bottom" constant="5" id="n7u-Gp-PpO"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="colectionCellImage" destination="FlU-WQ-chj" id="vQS-fP-mpe"/>
+                                                                <outlet property="colectionCellLabaTitle" destination="nzR-eU-suy" id="tHP-da-yeg"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                     <connections>
@@ -504,7 +522,7 @@
                                                         <outlet property="delegate" destination="vzA-m9-SMm" id="Az2-qN-XCH"/>
                                                     </connections>
                                                 </collectionView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENTS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrF-Fo-wGZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STORIES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrF-Fo-wGZ">
                                                     <rect key="frame" x="23" y="3" width="152" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.99498334389999998" green="0.046538194290000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -610,6 +628,7 @@
                     <connections>
                         <outlet property="EventsCollectionView" destination="iK4-yn-ubL" id="HNn-R0-ygT"/>
                         <outlet property="comicsCollectionView" destination="e0g-o4-sPs" id="OIE-Vn-ppx"/>
+                        <outlet property="imgMainCharchter" destination="h2z-I2-BYq" id="I3n-ue-RO8"/>
                         <outlet property="lblDescription" destination="PM8-xb-6Vw" id="BrS-IA-d1F"/>
                         <outlet property="lblTitle" destination="TVG-vY-Ytp" id="cJk-21-7PX"/>
                         <outlet property="seriesCollectionView" destination="sjE-Ue-uqz" id="Wkf-Jd-3dA"/>
@@ -618,7 +637,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thH-6J-3HL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="946.39999999999998" y="273.91304347826087"/>
+            <point key="canvasLocation" x="1394" y="149"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eaD-D7-fS2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZIx-0X-YmL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yvi-2g-ete">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1q8-Mz-Icd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y6V-no-CsD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-441" y="101"/>
         </scene>
     </scenes>
     <resources>

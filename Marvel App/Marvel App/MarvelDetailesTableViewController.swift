@@ -7,36 +7,56 @@
 //
 
 import UIKit
-
+import Kingfisher
 class MarvelDetailesTableViewController: UITableViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
+    @IBOutlet weak var storiesCollectionView: UICollectionView!
     @IBOutlet weak var comicsCollectionView: UICollectionView!
     @IBOutlet weak var EventsCollectionView: UICollectionView!
     @IBOutlet weak var seriesCollectionView: UICollectionView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
-    var comicsList:[String:String]?
-    var seriessList:[String:String]?
-    var eventsList:[String:String]?
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        /// case if its comics CollectionView
-        if collectionView == comicsCollectionView {
-            return comicsList?.count ?? 0
-        }/// case if its events CollectionView
-        else if collectionView == EventsCollectionView{
-            return eventsList?.count ?? 0
+    @IBOutlet weak var imgMainCharchter: UIImageView!
+    var marvelPassedData:MarvelItem?{
+        didSet{
         }
-        /// case if its series CollectionView
-        return seriessList?.count ?? 0
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updatUI()
+    }
+    func updatUI(){
+        lblTitle.text = marvelPassedData?.title!
+        lblDescription.text = marvelPassedData?.description
+        imgMainCharchter.kf.setImage(with: URL(string: (marvelPassedData?.img_URL!)!)!)
+        
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! MarvelCollectionViewCell
+        if collectionView == comicsCollectionView{
+            //cell.colectionCellLabaTitle.text = marvelPassedData?.comics.keys[0]
+        }else if collectionView == EventsCollectionView{
+        
+        }else if collectionView == storiesCollectionView{
+            
+        }else {
+            
+        }
+        
         return cell
     }
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        /// case if its comics CollectionView
+        if collectionView == comicsCollectionView {
+            return marvelPassedData?.comics.count ?? 0
+        }/// case if its events CollectionView
+        else if collectionView == EventsCollectionView{
+            return marvelPassedData?.events.count ?? 0
+        }///case if its series collection
+        else if collectionView == storiesCollectionView{
+            return marvelPassedData?.series.count ?? 0
+        }
+        /// case if its series CollectionView
+        return marvelPassedData?.stories.count ?? 0
     }
 }

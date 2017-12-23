@@ -9,5 +9,6 @@
 import UIKit
 
 class MarvelCollectionViewCell: UICollectionViewCell {
-    
+    @IBOutlet weak var colectionCellLabaTitle: UILabel!
+    @IBOutlet weak var colectionCellImage: UIImageView!
 }

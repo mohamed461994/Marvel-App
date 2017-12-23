@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D904DEAF1FEDC66200C2D317 /* MarvelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D904DEAE1FEDC66200C2D317 /* MarvelCollectionViewCell.swift */; };
+		D90CEEA61FEEA86500AB1C25 /* ViewModelSingleMarvel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90CEEA51FEEA86500AB1C25 /* ViewModelSingleMarvel.swift */; };
 		D99625111FECE59F000759BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99625101FECE59F000759BE /* AppDelegate.swift */; };
 		D99625131FECE59F000759BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99625121FECE59F000759BE /* ViewController.swift */; };
 		D99625161FECE59F000759BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D99625141FECE59F000759BE /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		B8AA647115CF293FDF45E0BD /* Pods_Marvel_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7058337AF5EF2C5FC66771B /* Pods-Marvel App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel App/Pods-Marvel App.debug.xcconfig"; sourceTree = "<group>"; };
 		D904DEAE1FEDC66200C2D317 /* MarvelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCollectionViewCell.swift; sourceTree = "<group>"; };
+		D90CEEA51FEEA86500AB1C25 /* ViewModelSingleMarvel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelSingleMarvel.swift; sourceTree = "<group>"; };
 		D996250D1FECE59F000759BE /* Marvel App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D99625101FECE59F000759BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D99625121FECE59F000759BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				D99625251FECE5F2000759BE /* Supporting Files */,
 				D99625121FECE59F000759BE /* ViewController.swift */,
 				D99625141FECE59F000759BE /* Main.storyboard */,
+				D90CEEA51FEEA86500AB1C25 /* ViewModelSingleMarvel.swift */,
 				D904DEAE1FEDC66200C2D317 /* MarvelCollectionViewCell.swift */,
 				D9A13CE41FED4D3E00126B95 /* MarvelTableViewCell.swift */,
 				D99625261FECE666000759BE /* ViewModel.swift */,
@@ -265,6 +268,7 @@
 				D99625271FECE666000759BE /* ViewModel.swift in Sources */,
 				D904DEAF1FEDC66200C2D317 /* MarvelCollectionViewCell.swift in Sources */,
 				D99625111FECE59F000759BE /* AppDelegate.swift in Sources */,
+				D90CEEA61FEEA86500AB1C25 /* ViewModelSingleMarvel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

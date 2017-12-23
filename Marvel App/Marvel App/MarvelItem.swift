@@ -10,6 +10,7 @@ import Foundation
 struct MarvelItem {
     var id:Int?
     var title:String?
+    var description:String?
     var img_URL:String?
     var comics:[String:String]=[:]
     var series:[String:String]=[:]

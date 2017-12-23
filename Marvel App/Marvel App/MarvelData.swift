@@ -43,6 +43,7 @@ class MarvelData{
                 for item in result{
                     self.marvelList.append(MarvelItem(id: item["id"].intValue,
                                   title: item["name"].stringValue,
+                                  description: item["description"].stringValue ,
                                   img_URL: "\(item["thumbnail"]["path"].stringValue).\(item["thumbnail"]["extension"].stringValue)",
                                   comics: self.getComicsEventsStoriesList(listJSON: item["comics"]["items"].arrayValue),
                                   series: self.getComicsEventsStoriesList(listJSON: item["series"]["items"].arrayValue),

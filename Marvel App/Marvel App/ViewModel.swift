@@ -24,5 +24,8 @@ class ViewModel{
     func marvelId(indexPath:IndexPath)->Int{
         return (marvelData?.marvelList[indexPath.row].id)!
     }
-    
+    func getSelecctedMarvelData(indexPath:IndexPath)-> MarvelItem{
+        return (marvelData?.marvelList[indexPath.row])!
+    }
+
 }

@@ -42,5 +42,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.marvelImg.kf.setImage(with: viewModel?.marvelURL(indexPath: indexPath))
         return cell
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SelecteMarvel"{
+            if let vC = segue.destination as? MarvelDetailesTableViewController {
+                vC.marvelPassedData = viewModel?.getSelecctedMarvelData(indexPath: (tableView.indexPathForSelectedRow)!)
+            }
+        }
+    }
 }
 
