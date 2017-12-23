@@ -40,6 +40,7 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
         }else if collectionView == storiesCollectionView && (marvelPassedData?.stories.count)! > 0{
             cell.colectionCellLabaTitle.text = marvelPassedData?.stories[indexPath.row].name!
         }else if collectionView == seriesCollectionView && (marvelPassedData?.series.count)! > 0 {
+            
             cell.colectionCellLabaTitle.text = marvelPassedData?.series[indexPath.row].name!
         }
         
@@ -54,9 +55,9 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
             return (marvelPassedData?.events.count)!
         }///case if its series collection
         else if collectionView == storiesCollectionView{
-            return (marvelPassedData?.series.count)!
+            return (marvelPassedData?.stories.count)!
         }
         /// case if its series CollectionView
-        return (marvelPassedData?.stories.count)!
+        return (marvelPassedData?.series.count)!
     }
 }
