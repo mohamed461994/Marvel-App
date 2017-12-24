@@ -51,7 +51,12 @@ class SingleMarvelData{
             Alamofire.request(url, method:.get ,parameters: parameters).responseJSON(queue: que){ response in
                 if let value = response.result.value {
                     let json = JSON(value)
-                    let imgURL = "\(json["data"]["results"][0]["images"][0]["path"]).\(json["data"]["results"][0]["images"][0]["extension"])"
+                    var imgURL=""
+                    if flag == "comics" {
+                        imgURL = "\(json["data"]["results"][0]["images"][0]["path"]).\(json["data"]["results"][0]["images"][0]["extension"])"
+                    }else{
+                            imgURL = "\(json["data"]["results"][0]["thumbnail"]["path"]).\(json["data"]["results"][0]["thumbnail"]["extension"])"
+                    }
                     self.insertToList(url :imgURL, flage: flag)
                     self.currentCount += 1
                     if self.currentCount == self.countOfAllRequeiredURL{
