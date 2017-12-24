@@ -9,8 +9,8 @@
 import Foundation
 class ViewModel{
     var marvelData:MarvelData?
-    init() {
-        marvelData = MarvelData(url: "http://gateway.marvel.com/v1/public/characters")
+    init(searchText:String) {
+        marvelData = MarvelData(url: "http://gateway.marvel.com/v1/public/characters",searchText: searchText)
     }
     func marvelItemCount()-> Int{
         return (marvelData?.marvelList.count)!

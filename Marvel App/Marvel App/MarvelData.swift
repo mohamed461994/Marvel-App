@@ -29,9 +29,9 @@ class MarvelData{
     private var privateKey:String = "defba3579ef750cdaf84d6f9ecc0420c3c16ba55" //"2afbd8d0b63f4727c6a8d0c3f240ddfcf5c89d71"
     private var ts = NSDate().timeIntervalSince1970.description
     let utilityQueue=DispatchQueue.global(qos: .utility)
-    init(url:String ) {
+    init(url:String,searchText:String) {
         self.url = url
-        addingParameters()
+        addingParameters(searchText:searchText)
         getJSON()
     }
     private func getJSON(){
@@ -70,10 +70,13 @@ class MarvelData{
         parameters!["offset"]=offset
         getJSON()
     }
-    func addingParameters(){
+    func addingParameters(searchText:String){
            let md5Str = MD5("\(ts)\(privateKey)\(publicKey)")
 
         parameters = ["ts": ts ,"apikey":publicKey, "hash":md5Str.lowercased() ,"limit" :6 , "offset": offset]
-        
+        if searchText != ""{
+            parameters!["nameStartsWith"] = searchText
+            marvelList.removeAll()
+        }
     }
 }

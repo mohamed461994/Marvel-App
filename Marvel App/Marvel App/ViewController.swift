@@ -10,12 +10,17 @@ import UIKit
 import Kingfisher
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
     var viewModel:ViewModel?
-    
+    var searchingText:String = ""{
+        didSet{
+            tableView.isHidden = true
+            viewModel = ViewModel(searchText: searchingText)
+        }
+    }
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         createObserverForReloadData()
-        viewModel = ViewModel()
+        viewModel = ViewModel(searchText: searchingText)
         creatingNaveBarLogo()
         creatRightBarButtonForSearch()
     }
@@ -45,6 +50,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         creatingNaveBarLogo()
         creatRightBarButtonForSearch()
+        viewModel = ViewModel(searchText: "")
     }
     /**
      This function used to creat observer to get notified when data is ready
@@ -59,7 +65,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @objc func reload(notification:NSNotification){
         DispatchQueue.main.async {[weak self] in
             self?.tableView.reloadData()
-
+            self?.tableView.isHidden = false
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,6 +84,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         navigationItem.titleView = searchBar
         searchBar.delegate=self
     }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchingText = searchText
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MarvelCell", for: indexPath) as! MarvelTableViewCell
         cell.lbltitle.text = viewModel?.marvelTite(indexPath: indexPath)
@@ -95,9 +104,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let lastItem = (viewModel?.numberOfRows())! - 1
         if indexPath.row == lastItem && ( lastItem + 1 ) % 6 == 0{
             viewModel?.loadMoreData()
-            
         }
     }
 
 }
-
