@@ -66,14 +66,14 @@ class MarvelData{
     }
 
     func loadMoreData(){
-        offset += 10
+        offset += 6
         parameters!["offset"]=offset
         getJSON()
     }
     func addingParameters(){
            let md5Str = MD5("\(ts)\(privateKey)\(publicKey)")
 
-        parameters = ["ts": ts ,"apikey":publicKey, "hash":md5Str.lowercased() ,"limit" :10 , "offset": offset]
+        parameters = ["ts": ts ,"apikey":publicKey, "hash":md5Str.lowercased() ,"limit" :6 , "offset": offset]
         
     }
 }

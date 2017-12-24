@@ -43,6 +43,7 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
         lblTitle.text = marvelPassedData?.title!
         lblDescription.text = marvelPassedData?.description
         imgMainCharchter.kf.setImage(with: URL(string: (marvelPassedData?.img_URL!)!)!)
+        hideCollectionViews()
         
     }
     /** this function is used to add add observer when images is ready to load in collection view */
@@ -57,8 +58,20 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
             self?.seriesCollectionView.reloadData()
             self?.EventsCollectionView.reloadData()
             self?.storiesCollectionView.reloadData()
-            
+            self?.showAllCollectionViews()
         }
+    }
+    func hideCollectionViews(){
+        comicsCollectionView.isHidden = true
+        seriesCollectionView.isHidden = true
+        EventsCollectionView.isHidden = true
+        storiesCollectionView.isHidden = true
+    }
+    func showAllCollectionViews(){
+        comicsCollectionView.isHidden = false
+        seriesCollectionView.isHidden = false
+        EventsCollectionView.isHidden = false
+        storiesCollectionView.isHidden = false
     }
     /**
      this function will be called 4 times when loaded each time will fill one of the

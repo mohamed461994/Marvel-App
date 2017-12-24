@@ -51,7 +51,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastItem = (viewModel?.numberOfRows())! - 1
-        if indexPath.row == lastItem && ( lastItem + 1 ) % 10 == 0{
+        if indexPath.row == lastItem && ( lastItem + 1 ) % 6 == 0{
             viewModel?.loadMoreData()
             
         }
