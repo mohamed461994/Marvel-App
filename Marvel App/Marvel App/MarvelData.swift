@@ -25,8 +25,8 @@ class MarvelData{
     }
     private var offset = 0
     private var parameters: Parameters?
-    private var publicKey:String = "e4760158eea16317d8ca0f8b258b9b3a"
-    private var privateKey:String = "2afbd8d0b63f4727c6a8d0c3f240ddfcf5c89d71"
+    private var publicKey:String = "cd3d94f09ee6eaed807ab1e51d0f2acc" // "e4760158eea16317d8ca0f8b258b9b3a"
+    private var privateKey:String = "defba3579ef750cdaf84d6f9ecc0420c3c16ba55" //"2afbd8d0b63f4727c6a8d0c3f240ddfcf5c89d71"
     private var ts = NSDate().timeIntervalSince1970.description
     let utilityQueue=DispatchQueue.global(qos: .utility)
     init(url:String ) {

@@ -12,8 +12,8 @@ import SwiftHash
 import SwiftyJSON
 class SingleMarvelData{
     private var parameters: Parameters?
-    private var publicKey:String = "e4760158eea16317d8ca0f8b258b9b3a"
-    private var privateKey:String = "2afbd8d0b63f4727c6a8d0c3f240ddfcf5c89d71"
+    private var publicKey:String = "cd3d94f09ee6eaed807ab1e51d0f2acc" // "e4760158eea16317d8ca0f8b258b9b3a"
+    private var privateKey:String = "defba3579ef750cdaf84d6f9ecc0420c3c16ba55" //"2afbd8d0b63f4727c6a8d0c3f240ddfcf5c89d71"
     private var ts = NSDate().timeIntervalSince1970.description
     let utilityQueue=DispatchQueue.global(qos: .utility)
     let userInitiated = DispatchQueue.global(qos: .userInitiated)
@@ -53,16 +53,11 @@ class SingleMarvelData{
                     let json = JSON(value)
                     let imgURL = "\(json["data"]["results"][0]["images"][0]["path"]).\(json["data"]["results"][0]["images"][0]["extension"])"
                     self.insertToList(url :imgURL, flage: flag)
-                    //print(imgURL)
-                    self.listComicsImagesURL.append(imgURL)
                     self.currentCount += 1
                     if self.currentCount == self.countOfAllRequeiredURL{
-                            print(self.countOfAllRequeiredURL)
-                            print(self.listStoreisImagesURL.count)
-                            print(self.listEventsImagesURL.count)
-                            print(self.listSeriesImagesURL.count)
-                            print(self.listComicsImagesURL.count)
-                    
+                        // post notification when getting all images url
+                        let notifiReload = Notification.Name(notificationForSingleDataLoad)
+                        NotificationCenter.default.post(name: notifiReload, object: nil)
                     }
                 }
             }

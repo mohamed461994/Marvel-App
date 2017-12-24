@@ -26,12 +26,26 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         updatUI()
+        createObserverForReloadData()
     }
     func updatUI(){
         lblTitle.text = marvelPassedData?.title!
         lblDescription.text = marvelPassedData?.description
         imgMainCharchter.kf.setImage(with: URL(string: (marvelPassedData?.img_URL!)!)!)
         
+    }
+    func createObserverForReloadData(){
+        let notifiReload = Notification.Name(notificationForReloadTable)
+        NotificationCenter.default.addObserver(self, selector: #selector(MarvelDetailesTableViewController.reloadData), name: notifiReload, object: nil)
+    }
+    @objc func reloadData(notification:NSNotification){
+        DispatchQueue.main.async {[weak self] in
+            self?.comicsCollectionView.reloadData()
+            self?.seriesCollectionView.reloadData()
+            self?.EventsCollectionView.reloadData()
+            self?.storiesCollectionView.reloadData()
+            
+        }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! MarvelCollectionViewCell
