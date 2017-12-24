@@ -46,7 +46,7 @@ class MarvelData{
                                   img_URL: "\(item["thumbnail"]["path"].stringValue).\(item["thumbnail"]["extension"].stringValue)",
                                   comics: self.getComicsEventsStoriesList(listJSON: item["comics"]["items"].arrayValue),
                                   series: self.getComicsEventsStoriesList(listJSON: item["series"]["items"].arrayValue),
-                                  stories: self.getComicsEventsStoriesList(listJSON: item["stories"]["items"].arrayValue),
+                                  stories: self.getComicsEventsStoriesList(listJSON: item["series"]["items"].arrayValue),
                                   events: self.getComicsEventsStoriesList(listJSON: item["events"]["items"].arrayValue)
                     ))
                 }

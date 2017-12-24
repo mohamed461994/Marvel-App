@@ -215,7 +215,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rvl-i2-CZ1">
                                                                         <rect key="frame" x="2" y="135" width="99" height="29"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M.I.E world hero for sleeping" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhe-tI-Unp">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M.I.E world hero for sleeping" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhe-tI-Unp">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="99" height="29"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -303,7 +303,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xZ9-cn-F7J">
                                                                         <rect key="frame" x="2" y="135" width="99" height="29"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M.I.E world hero for sleeping" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUh-L4-Ix6">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M.I.E world hero for sleeping" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUh-L4-Ix6">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="99" height="29"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -392,7 +392,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UXQ-zc-0Qw">
                                                                         <rect key="frame" x="2" y="135" width="99" height="29"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M.I.E world hero for sleeping" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnz-Ze-Xbb">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M.I.E world hero for sleeping" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnz-Ze-Xbb">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="99" height="29"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -480,7 +480,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NLg-PK-aXX">
                                                                         <rect key="frame" x="2" y="135" width="99" height="29"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M.I.E world hero for sleeping" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzR-eU-suy">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M.I.E world hero for sleeping" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzR-eU-suy">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="99" height="29"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -565,7 +565,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lW3-6w-UPC">
-                                                    <rect key="frame" x="23" y="53" width="41.5" height="19.5"/>
+                                                    <rect key="frame" x="23" y="53" width="252" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -578,7 +578,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wiki" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0q8-Wm-c1u">
-                                                    <rect key="frame" x="23" y="95.5" width="31" height="19.5"/>
+                                                    <rect key="frame" x="23" y="95.5" width="252" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -591,7 +591,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comicList" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e03-Xx-pW6">
-                                                    <rect key="frame" x="23" y="138" width="70" height="19.5"/>
+                                                    <rect key="frame" x="23" y="138" width="252" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -603,12 +603,15 @@
                                                 <constraint firstItem="lW3-6w-UPC" firstAttribute="leading" secondItem="Bqu-Sc-JD8" secondAttribute="leading" constant="23" id="BiT-SE-ArE"/>
                                                 <constraint firstAttribute="trailing" secondItem="Jkm-ii-OcN" secondAttribute="trailing" constant="18" id="FpP-5O-iHP"/>
                                                 <constraint firstItem="e03-Xx-pW6" firstAttribute="top" secondItem="0q8-Wm-c1u" secondAttribute="bottom" constant="23" id="HHn-z1-P6y"/>
+                                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="e03-Xx-pW6" secondAttribute="trailing" constant="100" id="Ui9-0C-edf"/>
                                                 <constraint firstItem="mKZ-8c-Aqd" firstAttribute="leading" secondItem="Bqu-Sc-JD8" secondAttribute="leading" constant="23" id="W2A-GT-vJE"/>
                                                 <constraint firstItem="e03-Xx-pW6" firstAttribute="leading" secondItem="0q8-Wm-c1u" secondAttribute="leading" id="W9F-H5-ErV"/>
                                                 <constraint firstItem="Jkm-ii-OcN" firstAttribute="top" secondItem="0q8-Wm-c1u" secondAttribute="top" id="Zge-eL-LXX"/>
+                                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="0q8-Wm-c1u" secondAttribute="trailing" constant="100" id="bOp-fe-sNo"/>
                                                 <constraint firstItem="lW3-6w-UPC" firstAttribute="top" secondItem="mKZ-8c-Aqd" secondAttribute="bottom" constant="24" id="fjO-8E-lNw"/>
                                                 <constraint firstAttribute="trailing" secondItem="miP-ar-01D" secondAttribute="trailing" constant="18" id="l4S-II-qSP"/>
                                                 <constraint firstItem="0q8-Wm-c1u" firstAttribute="leading" secondItem="lW3-6w-UPC" secondAttribute="leading" id="mGy-ib-ayK"/>
+                                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="lW3-6w-UPC" secondAttribute="trailing" constant="100" id="mOa-Jb-DhM"/>
                                                 <constraint firstItem="0q8-Wm-c1u" firstAttribute="top" secondItem="lW3-6w-UPC" secondAttribute="bottom" constant="23" id="ojG-AT-EAg"/>
                                                 <constraint firstItem="iuH-00-qMg" firstAttribute="top" secondItem="e03-Xx-pW6" secondAttribute="top" id="rHN-Zw-dTN"/>
                                                 <constraint firstAttribute="trailing" secondItem="iuH-00-qMg" secondAttribute="trailing" constant="18" id="rwh-mp-3BJ"/>

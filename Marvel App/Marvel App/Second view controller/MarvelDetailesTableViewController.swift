@@ -40,7 +40,6 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
     }
     @objc func reloadData(notification:NSNotification){
         DispatchQueue.main.async {[weak self] in
-            print("notified")
             self?.comicsCollectionView.reloadData()
             self?.seriesCollectionView.reloadData()
             self?.EventsCollectionView.reloadData()

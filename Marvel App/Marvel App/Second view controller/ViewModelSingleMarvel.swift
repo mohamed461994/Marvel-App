@@ -35,7 +35,6 @@ class ViewModelSingleMarvel{
         return (marveData?.listSeriesImagesURL.count)!
     }
     func getSerieImgUrl(indexPath:IndexPath)->URL{
-        print((marveData?.listSeriesImagesURL[indexPath.row])!)
         return URL(string: (marveData?.listSeriesImagesURL[indexPath.row])!)!
     }
     /**
@@ -53,7 +52,6 @@ class ViewModelSingleMarvel{
         return (marveData?.listSeriesImagesURL.count)!
     }
     func getStoryImgUrl(indexPath:IndexPath)->URL{
-        print((marveData?.listStoreisImagesURL[indexPath.row])!)
         return URL(string: (marveData?.listStoreisImagesURL[indexPath.row])!)!
     }
     /**
@@ -71,7 +69,6 @@ class ViewModelSingleMarvel{
         return (marveData?.listEventsImagesURL.count)!
     }
     func getEventImgUrl(indexPath:IndexPath)->URL{
-        print((marveData?.listEventsImagesURL[indexPath.row])!)
         return URL(string: (marveData?.listEventsImagesURL[indexPath.row])!)!
     }
     /**
