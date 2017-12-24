@@ -8,7 +8,7 @@
 
 import UIKit
 import Kingfisher
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
     var viewModel:ViewModel?
     
     @IBOutlet weak var tableView: UITableView!
@@ -16,9 +16,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         super.viewDidLoad()
         createObserverForReloadData()
         viewModel = ViewModel()
-        creatingNaveBarStaff()
+        creatingNaveBarLogo()
     }
-    func creatingNaveBarStaff(){
+    func creatingNaveBarLogo(){
         let navController = navigationController!
         let img = #imageLiteral(resourceName: "icn-nav-marvel")
         let imgView = UIImageView(image: img)
@@ -33,6 +33,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         imgView.contentMode = .scaleAspectFit
         
         navigationItem.titleView = imgView
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        creatingNaveBarLogo()
+        let btn = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(ViewController.searchingIconAction))
+        navigationItem.setRightBarButton(btn, animated: true)
     }
     /**
      This function used to creat observer to get notified when data is ready
@@ -52,6 +57,20 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (viewModel?.marvelItemCount())!
+    }
+    @IBAction func searchingIconAction(_ sender: UIBarButtonItem) {
+        navigationItem.setRightBarButton(nil, animated: false)
+        creatSearchBar()
+    }
+    func creatSearchBar(){
+        let searchBar = UISearchBar()
+        searchBar.showsCancelButton = true
+        searchBar.searchBarStyle = .prominent
+        searchBar.placeholder = " Search..."
+        searchBar.backgroundColor = .black
+        navigationItem.titleView = searchBar
+       
+        searchBar.delegate=self
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MarvelCell", for: indexPath) as! MarvelTableViewCell
