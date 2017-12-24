@@ -206,6 +206,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="237"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="SEg-Le-z6P">
+                                                    <rect key="frame" x="197" y="108" width="20" height="20"/>
+                                                </activityIndicatorView>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e0g-o4-sPs">
                                                     <rect key="frame" x="8" y="30" width="398" height="201"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -282,6 +285,8 @@
                                                 <constraint firstItem="e0g-o4-sPs" firstAttribute="top" secondItem="Blr-uh-6m5" secondAttribute="top" constant="30" id="ONx-DE-Cba"/>
                                                 <constraint firstAttribute="trailing" secondItem="e0g-o4-sPs" secondAttribute="trailing" constant="8" id="PI9-WX-W9r"/>
                                                 <constraint firstItem="Jcj-BW-VgV" firstAttribute="top" secondItem="Blr-uh-6m5" secondAttribute="top" constant="3" id="YHW-l4-KPN"/>
+                                                <constraint firstItem="SEg-Le-z6P" firstAttribute="centerX" secondItem="Blr-uh-6m5" secondAttribute="centerX" id="cut-it-6Kg"/>
+                                                <constraint firstItem="SEg-Le-z6P" firstAttribute="centerY" secondItem="Blr-uh-6m5" secondAttribute="centerY" id="jAr-Wp-UZ7"/>
                                                 <constraint firstItem="e0g-o4-sPs" firstAttribute="leading" secondItem="Blr-uh-6m5" secondAttribute="leading" constant="8" id="xf8-mB-Or8"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -294,6 +299,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="237"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="zRY-nD-R8a">
+                                                    <rect key="frame" x="197" y="108" width="20" height="20"/>
+                                                </activityIndicatorView>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sjE-Ue-uqz">
                                                     <rect key="frame" x="8" y="30" width="398" height="201"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -367,11 +375,13 @@
                                             <constraints>
                                                 <constraint firstItem="CCE-Mm-4Dm" firstAttribute="top" secondItem="rfH-UK-MqI" secondAttribute="top" constant="3" id="5hd-Ye-7XL"/>
                                                 <constraint firstItem="sjE-Ue-uqz" firstAttribute="top" secondItem="rfH-UK-MqI" secondAttribute="top" constant="30" id="FDE-g4-amF"/>
+                                                <constraint firstItem="zRY-nD-R8a" firstAttribute="centerX" secondItem="rfH-UK-MqI" secondAttribute="centerX" id="Gii-ES-2aC"/>
                                                 <constraint firstAttribute="bottom" secondItem="sjE-Ue-uqz" secondAttribute="bottom" constant="5.5" id="K24-9a-IzN"/>
                                                 <constraint firstAttribute="trailing" secondItem="sjE-Ue-uqz" secondAttribute="trailing" constant="8" id="KmM-mn-val"/>
                                                 <constraint firstItem="sjE-Ue-uqz" firstAttribute="leading" secondItem="rfH-UK-MqI" secondAttribute="leading" constant="8" id="Xk2-qc-kTu"/>
                                                 <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="CCE-Mm-4Dm" secondAttribute="trailing" constant="200" id="brL-dk-cQp"/>
                                                 <constraint firstItem="CCE-Mm-4Dm" firstAttribute="leading" secondItem="rfH-UK-MqI" secondAttribute="leading" constant="23" id="hT3-s4-vbj"/>
+                                                <constraint firstItem="zRY-nD-R8a" firstAttribute="centerY" secondItem="rfH-UK-MqI" secondAttribute="centerY" id="pMm-TI-Iq2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -383,6 +393,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="237"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="2FY-wA-zie">
+                                                    <rect key="frame" x="197" y="108" width="20" height="20"/>
+                                                </activityIndicatorView>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iK4-yn-ubL">
                                                     <rect key="frame" x="8" y="30" width="398" height="201"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -459,6 +472,8 @@
                                                 <constraint firstItem="HTb-La-93c" firstAttribute="top" secondItem="UFl-R0-QVH" secondAttribute="top" constant="3" id="Vlt-xH-sZp"/>
                                                 <constraint firstAttribute="bottom" secondItem="iK4-yn-ubL" secondAttribute="bottom" constant="5.5" id="WGm-FQ-uXO"/>
                                                 <constraint firstItem="iK4-yn-ubL" firstAttribute="top" secondItem="UFl-R0-QVH" secondAttribute="top" constant="30" id="Z92-0T-ZXP"/>
+                                                <constraint firstItem="2FY-wA-zie" firstAttribute="centerX" secondItem="UFl-R0-QVH" secondAttribute="centerX" id="gQ0-GP-gTz"/>
+                                                <constraint firstItem="2FY-wA-zie" firstAttribute="centerY" secondItem="UFl-R0-QVH" secondAttribute="centerY" id="n2q-pZ-C2b"/>
                                                 <constraint firstItem="HTb-La-93c" firstAttribute="leading" secondItem="UFl-R0-QVH" secondAttribute="leading" constant="23" id="niy-iO-gb8"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -471,6 +486,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="237"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="DtE-dV-ugv">
+                                                    <rect key="frame" x="197" y="108.66666666666666" width="20" height="19.999999999999972"/>
+                                                </activityIndicatorView>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YUs-oY-bOY">
                                                     <rect key="frame" x="8" y="30" width="398" height="201"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -547,6 +565,8 @@
                                                 <constraint firstItem="xrF-Fo-wGZ" firstAttribute="leading" secondItem="jH1-ud-fQ1" secondAttribute="leading" constant="23" id="PzO-4R-xkM"/>
                                                 <constraint firstItem="YUs-oY-bOY" firstAttribute="leading" secondItem="jH1-ud-fQ1" secondAttribute="leading" constant="8" id="gbT-ZV-sZB"/>
                                                 <constraint firstAttribute="bottom" secondItem="YUs-oY-bOY" secondAttribute="bottom" constant="5.5" id="ka5-f8-oUw"/>
+                                                <constraint firstItem="DtE-dV-ugv" firstAttribute="centerY" secondItem="jH1-ud-fQ1" secondAttribute="centerY" id="krT-6q-Zy8"/>
+                                                <constraint firstItem="DtE-dV-ugv" firstAttribute="centerX" secondItem="jH1-ud-fQ1" secondAttribute="centerX" id="pWu-Cg-VEY"/>
                                                 <constraint firstAttribute="trailing" secondItem="YUs-oY-bOY" secondAttribute="trailing" constant="8" id="u1n-Fg-92A"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -643,6 +663,10 @@
                         <outlet property="EventsCollectionView" destination="iK4-yn-ubL" id="HNn-R0-ygT"/>
                         <outlet property="comicsCollectionView" destination="e0g-o4-sPs" id="OIE-Vn-ppx"/>
                         <outlet property="imgMainCharchter" destination="h2z-I2-BYq" id="I3n-ue-RO8"/>
+                        <outlet property="indicator" destination="SEg-Le-z6P" id="DU2-hq-JS1"/>
+                        <outlet property="indicatorII" destination="DtE-dV-ugv" id="qzv-Z6-kOG"/>
+                        <outlet property="indicatorIII" destination="2FY-wA-zie" id="bOp-FT-q3q"/>
+                        <outlet property="indicatorIIII" destination="zRY-nD-R8a" id="BQK-oq-2MK"/>
                         <outlet property="lblDescription" destination="PM8-xb-6Vw" id="BrS-IA-d1F"/>
                         <outlet property="lblTitle" destination="TVG-vY-Ytp" id="cJk-21-7PX"/>
                         <outlet property="seriesCollectionView" destination="sjE-Ue-uqz" id="Wkf-Jd-3dA"/>

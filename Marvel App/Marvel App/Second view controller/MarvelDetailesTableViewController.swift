@@ -33,6 +33,22 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
                                       events: getEventsURI())
         }
     }
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var indicatorII: UIActivityIndicatorView!
+    @IBOutlet weak var indicatorIII: UIActivityIndicatorView!
+    @IBOutlet weak var indicatorIIII: UIActivityIndicatorView!
+    func startIndicator(){
+        indicator.startAnimating()
+        indicatorII.startAnimating()
+        indicatorIII.startAnimating()
+        indicatorIIII.startAnimating()
+    }
+    func stopIndicator(){
+        indicator.stopAnimating()
+        indicatorII.stopAnimating()
+        indicatorIII.stopAnimating()
+        indicatorIIII.stopAnimating()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         updatUI()
@@ -44,7 +60,7 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
         lblDescription.text = marvelPassedData?.description
         imgMainCharchter.kf.setImage(with: URL(string: (marvelPassedData?.img_URL!)!)!)
         hideCollectionViews()
-        
+        startIndicator()
     }
     /** this function is used to add add observer when images is ready to load in collection view */
     func createObserverForReloadData(){
@@ -54,6 +70,7 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
     /// this function will be called by notification selector
     @objc func reloadData(notification:NSNotification){
         DispatchQueue.main.async {[weak self] in
+            self?.stopIndicator()
             self?.comicsCollectionView.reloadData()
             self?.seriesCollectionView.reloadData()
             self?.EventsCollectionView.reloadData()

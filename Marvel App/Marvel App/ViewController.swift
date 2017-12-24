@@ -19,6 +19,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         creatingNaveBarLogo()
         creatRightBarButtonForSearch()
     }
+    
     func creatingNaveBarLogo(){
         let navController = navigationController!
         let img = #imageLiteral(resourceName: "icn-nav-marvel")
