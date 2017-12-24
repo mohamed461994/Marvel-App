@@ -35,11 +35,12 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
         
     }
     func createObserverForReloadData(){
-        let notifiReload = Notification.Name(notificationForReloadTable)
+        let notifiReload = Notification.Name(notificationForSingleDataLoad)
         NotificationCenter.default.addObserver(self, selector: #selector(MarvelDetailesTableViewController.reloadData), name: notifiReload, object: nil)
     }
     @objc func reloadData(notification:NSNotification){
         DispatchQueue.main.async {[weak self] in
+            print("notified")
             self?.comicsCollectionView.reloadData()
             self?.seriesCollectionView.reloadData()
             self?.EventsCollectionView.reloadData()
@@ -49,14 +50,30 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! MarvelCollectionViewCell
+        // in case if its commics collection view
         if collectionView == comicsCollectionView && (marvelPassedData?.comics.count)! > 0{
             cell.colectionCellLabaTitle.text = marvelPassedData?.comics[indexPath.row].name!
-        }else if collectionView == EventsCollectionView && (marvelPassedData?.events.count)! > 0{
+            // in case if comics list url is ready to load
+            if (viewModel?.comicsListIsReady(size: (marvelPassedData?.comics.count)!))!{
+                cell.colectionCellImage.kf.setImage(with: viewModel?.getComicImgUrl(indexPath: indexPath))
+            }
+        }// case if its event collection view
+        else if collectionView == EventsCollectionView && (marvelPassedData?.events.count)! > 0{
             cell.colectionCellLabaTitle.text = marvelPassedData?.events[indexPath.row].name!
-        }else if collectionView == storiesCollectionView && (marvelPassedData?.stories.count)! > 0{
+            if (viewModel?.eventsListIsReady(size: (marvelPassedData?.events.count)!))!{
+                cell.colectionCellImage.kf.setImage(with: viewModel?.getEventImgUrl(indexPath: indexPath))
+            }
+        }// case if its stories collection view
+        else if collectionView == storiesCollectionView && (marvelPassedData?.stories.count)! > 0{
             cell.colectionCellLabaTitle.text = marvelPassedData?.stories[indexPath.row].name!
-        }else if collectionView == seriesCollectionView && (marvelPassedData?.series.count)! > 0 {
-            
+            if (viewModel?.storesListIsReady(size: (marvelPassedData?.stories.count)!))!{
+                cell.colectionCellImage.kf.setImage(with: viewModel?.getStoryImgUrl(indexPath: indexPath))
+            }
+        }// case if its series  collection view
+        else if collectionView == seriesCollectionView && (marvelPassedData?.series.count)! > 0 {
+            if (viewModel?.seriesListIsReady(size: (marvelPassedData?.series.count)!))!{
+                cell.colectionCellImage.kf.setImage(with: viewModel?.getSerieImgUrl(indexPath: indexPath))
+            }
             cell.colectionCellLabaTitle.text = marvelPassedData?.series[indexPath.row].name!
         }
         
