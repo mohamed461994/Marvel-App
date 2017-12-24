@@ -16,6 +16,23 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         super.viewDidLoad()
         createObserverForReloadData()
         viewModel = ViewModel()
+        creatingNaveBarStaff()
+    }
+    func creatingNaveBarStaff(){
+        let navController = navigationController!
+        let img = #imageLiteral(resourceName: "icn-nav-marvel")
+        let imgView = UIImageView(image: img)
+        
+        let bannerWidth = navController.navigationBar.frame.size.width
+        let bannerHeight = navController.navigationBar.frame.size.height
+        
+        let bannerX = bannerWidth / 2 - 50
+        let bannerY = bannerHeight / 2 - 25
+        
+        imgView.frame = CGRect(x: bannerX, y: bannerY, width: 100, height: 50)
+        imgView.contentMode = .scaleAspectFit
+        
+        navigationItem.titleView = imgView
     }
     /**
      This function used to creat observer to get notified when data is ready
