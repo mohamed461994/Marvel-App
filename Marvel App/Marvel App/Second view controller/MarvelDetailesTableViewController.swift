@@ -9,18 +9,28 @@
 import UIKit
 import Kingfisher
 class MarvelDetailesTableViewController: UITableViewController,UICollectionViewDelegate,UICollectionViewDataSource {
-    
+    /// story collection view outlet that display stories images and title for charchter
     @IBOutlet weak var storiesCollectionView: UICollectionView!
+    /// comic collection view outlet that display comics images and title for charchter
     @IBOutlet weak var comicsCollectionView: UICollectionView!
+    /// event collection view outlet that display events images and title for charchter
     @IBOutlet weak var EventsCollectionView: UICollectionView!
+    /// serie collection view outlet that display series images and title for charchter
     @IBOutlet weak var seriesCollectionView: UICollectionView!
+    /// this is lable outlet for the main Title of a charchter
     @IBOutlet weak var lblTitle: UILabel!
+    /// this is lable outlet for charchter description
     @IBOutlet weak var lblDescription: UILabel!
+    /// this is the main imageView outlet for the charchter
     @IBOutlet weak var imgMainCharchter: UIImageView!
     var viewModel:ViewModelSingleMarvel?
+    /// this is sette by the main view controller in prepare for segue
     var marvelPassedData:MarvelItem?{
         didSet{
-            viewModel=ViewModelSingleMarvel(comics: getComicsURI() , series: getSeriesURI(), stores: getStoriesURI(), events: getEventsURI())
+            viewModel=ViewModelSingleMarvel(comics: getComicsURI() ,
+                                      series: getSeriesURI(),
+                                      stores: getStoriesURI(),
+                                      events: getEventsURI())
         }
     }
     override func viewDidLoad() {
@@ -28,16 +38,19 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
         updatUI()
         createObserverForReloadData()
     }
+    /// this function used to set INFO that came from segue to the UI
     func updatUI(){
         lblTitle.text = marvelPassedData?.title!
         lblDescription.text = marvelPassedData?.description
         imgMainCharchter.kf.setImage(with: URL(string: (marvelPassedData?.img_URL!)!)!)
         
     }
+    /** this function is used to add add observer when images is ready to load in collection view */
     func createObserverForReloadData(){
         let notifiReload = Notification.Name(notificationForSingleDataLoad)
         NotificationCenter.default.addObserver(self, selector: #selector(MarvelDetailesTableViewController.reloadData), name: notifiReload, object: nil)
     }
+    /// this function will be called by notification selector
     @objc func reloadData(notification:NSNotification){
         DispatchQueue.main.async {[weak self] in
             self?.comicsCollectionView.reloadData()
@@ -47,6 +60,10 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
             
         }
     }
+    /**
+     this function will be called 4 times when loaded each time will fill one of the
+     collection view (series comics storei etc...)
+     */
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! MarvelCollectionViewCell
         // in case if its commics collection view
@@ -79,28 +96,32 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        /// case if its comics CollectionView
+        // case if its comics CollectionView
         if collectionView == comicsCollectionView {
             return (marvelPassedData?.comics.count)!
-        }/// case if its events CollectionView
+        }// case if its events CollectionView
         else if collectionView == EventsCollectionView{
             return (marvelPassedData?.events.count)!
-        }///case if its series collection
+        }//case if its series collection
         else if collectionView == storiesCollectionView{
             return (marvelPassedData?.stories.count)!
         }
-        /// case if its series CollectionView
+        // case if its series CollectionView
         return (marvelPassedData?.series.count)!
     }
+    /// this function return comics URI to get its images
     func getComicsURI()->[String]{
         return (marvelPassedData?.comics.map{$0.resourceURI!})!
     }
+    /// this function return series URI to get its images
     func getSeriesURI()->[String]{
         return (marvelPassedData?.series.map{$0.resourceURI!})!
     }
+    /// this function return stories URI to get its images
     func getStoriesURI()->[String]{
         return (marvelPassedData?.stories.map{$0.resourceURI!})!
     }
+    /// this function return events URI to get its images
     func getEventsURI()->[String]{
         return (marvelPassedData?.events.map{$0.resourceURI!})!
     }
