@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="142"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Lc-7r-WES" id="oVZ-WZ-Wsx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="141.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ymR-Kk-Hl2">
@@ -78,13 +78,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="abW-AO-PAk">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="icn-nav-search" id="aDz-Xq-bsy">
-                            <connections>
-                                <action selector="searchingIconAction:" destination="BYZ-38-t0r" id="tFz-N9-M3z"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="abW-AO-PAk"/>
                     <connections>
                         <outlet property="tableView" destination="i4h-nk-6zf" id="QN5-Dr-i8O"/>
                     </connections>
@@ -669,7 +663,6 @@
     </scenes>
     <resources>
         <image name="icn-cell-disclosure" width="26" height="26"/>
-        <image name="icn-nav-search" width="28" height="28"/>
         <image name="marvel" width="300" height="168"/>
     </resources>
 </document>

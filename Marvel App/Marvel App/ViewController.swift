@@ -17,6 +17,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         createObserverForReloadData()
         viewModel = ViewModel()
         creatingNaveBarLogo()
+        creatRightBarButtonForSearch()
     }
     func creatingNaveBarLogo(){
         let navController = navigationController!
@@ -33,11 +34,16 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         imgView.contentMode = .scaleAspectFit
         
         navigationItem.titleView = imgView
+        // to creat search icon
+        
+    }
+    func creatRightBarButtonForSearch(){
+        let btn = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(ViewController.searchingIconAction))
+        navigationItem.setRightBarButton(btn, animated: true)
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         creatingNaveBarLogo()
-        let btn = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(ViewController.searchingIconAction))
-        navigationItem.setRightBarButton(btn, animated: true)
+        creatRightBarButtonForSearch()
     }
     /**
      This function used to creat observer to get notified when data is ready
@@ -69,7 +75,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         searchBar.placeholder = " Search..."
         searchBar.backgroundColor = .black
         navigationItem.titleView = searchBar
-       
         searchBar.delegate=self
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
