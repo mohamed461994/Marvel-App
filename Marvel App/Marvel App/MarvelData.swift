@@ -24,15 +24,18 @@ class MarvelData{
     /// this variable is string url for the API
     private var url:String?
     /// this variable will set true each time json result is ready
-    private var parseIsDone:Bool?{
+    private var dataIsReadyToBeDisplaied:Bool?{
         didSet{
             /// push notification to reload data in first view controllet
             let notifiReload = Notification.Name(notificationForReloadTable)
             NotificationCenter.default.post(name: notifiReload, object: nil)
-            /// insert to data base
-            for charchter in marvelList {
-                insertToDataBase(item: charchter,context: context!)
+            /// insert to data base in case of ofline mode
+            if !(MarvelData.conectionIsNotAvailable()){
+                for charchter in marvelList {
+                    insertToDataBase(item: charchter,context: context!)
+                }
             }
+            
         }
     }
     /// this variable used as parameter to API to load more data with an offset
@@ -48,10 +51,28 @@ class MarvelData{
     /// this is utility queue will be used with Alamofire reequests
     let utilityQueue=DispatchQueue.global(qos: .utility)
     init(url:String,searchText:String) {
-        self.url = url
+        // in all cases you need contxt to contact with CoreData
         creatContext()
-        addingParameters(searchText:searchText)
-        getJSON()
+        if (MarvelData.conectionIsNotAvailable()){
+            print("no Internet")
+            // case if there is no internet
+            getDataFromDBToMarvelList()
+        }else{
+            // ase of online
+            self.url = url
+            addingParameters(searchText:searchText)
+            getJSON()
+        }
+    }
+    /**
+     this function will be used to check if conection is available or not
+     */
+        class func conectionIsNotAvailable()->Bool{
+            let reachability:Reachability = Reachability.init()!
+        if ((reachability.connection) == .none){
+            return true
+        }
+        return false
     }
     /**
      this function is used to fill marvelList with right information by geting these INFO from the JSON response of the API it used AlamoFire for making requests
@@ -73,7 +94,7 @@ class MarvelData{
                         events: self.getComicsEventsStoriesList(listJSON: item["events"]["items"].arrayValue)
                     ))
                 }
-                self.parseIsDone = true
+                self.dataIsReadyToBeDisplaied = true
             }
         }
     }
@@ -115,5 +136,21 @@ extension MarvelData {
     }
     func creatContext(){
         context=(UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    }
+    func getDataFromDBToMarvelList(){
+        let list = MarvelEntity.getAllDataFromCoreData(context: context!)
+        for marv in list!{
+             marvelList.append(MarvelItem(
+                                    id: Int(marv.id),
+                                    title: marv.title,
+                                    description: marv.detailes,
+                                    img_URL: marv.imgURL,
+                                    comics: [],
+                                    series: [],
+                                    stories: [],
+                                    events: []
+                                ))
+        }
+        self.dataIsReadyToBeDisplaied = true
     }
 }
