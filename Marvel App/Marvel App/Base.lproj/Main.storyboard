@@ -89,7 +89,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="abW-AO-PAk"/>
+                    <navigationItem key="navigationItem" id="abW-AO-PAk">
+                        <barButtonItem key="backBarButtonItem" title="    " id="pup-Gb-ZD5"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="i4h-nk-6zf" id="QN5-Dr-i8O"/>
                     </connections>
@@ -687,6 +689,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KnE-vz-d10">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1q8-Mz-Icd"/>
                     </connections>

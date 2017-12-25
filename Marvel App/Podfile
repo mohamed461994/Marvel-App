@@ -9,4 +9,5 @@ target 'Marvel App' do
   pod 'Alamofire', '~> 4.5'
   pod 'SwiftHash'
   pod 'SwiftyJSON'
+  pod 'ReachabilitySwift'
 end

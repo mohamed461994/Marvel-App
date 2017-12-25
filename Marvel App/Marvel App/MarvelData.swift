@@ -12,6 +12,7 @@ import Alamofire
 import SwiftHash
 import SwiftyJSON
 import CoreData
+import Reachability
 /**
   this class is used to get data from JSON it takes two parameter url and search string in case if string = "" empty text thin it wont search in case if it has value it will used for searching
  */
