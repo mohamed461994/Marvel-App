@@ -109,9 +109,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             if let vC = segue.destination as? MarvelDetailesTableViewController {
                 if (MarvelData.conectionIsNotAvailable()){
                     vC.noInternt = true
-                }else {
-                    vC.marvelPassedData = viewModel?.getSelecctedMarvelData(indexPath: (tableView.indexPathForSelectedRow)!)
                 }
+                vC.marvelPassedData = viewModel?.getSelecctedMarvelData(indexPath: (tableView.indexPathForSelectedRow)!)
             }
         }
     }

@@ -58,11 +58,13 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
     }
     /// this function used to set INFO that came from segue to the UI
     func updatUI(){
-        lblTitle.text = marvelPassedData?.title!
-        lblDescription.text = marvelPassedData?.description
-        imgMainCharchter.kf.setImage(with: URL(string: (marvelPassedData?.img_URL!)!)!)
-        hideCollectionViews()
-        startIndicator()
+        if let marvel = marvelPassedData{
+            lblTitle.text = marvel.title!
+            lblDescription.text = marvel.description
+            imgMainCharchter.kf.setImage(with: URL(string: (marvel.img_URL!))!)
+            hideCollectionViews()
+            startIndicator()
+        }
     }
     /** this function is used to add add observer when images is ready to load in collection view */
     func createObserverForReloadData(){
