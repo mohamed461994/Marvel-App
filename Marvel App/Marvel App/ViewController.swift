@@ -101,11 +101,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     /**
      this function will called when user chose cell to segue  to the second view controller
+     if there is no internet it wont set URI on the prepare for segues
+     but it will just set the variable of noInternet
      */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SelecteMarvel"{
             if let vC = segue.destination as? MarvelDetailesTableViewController {
-                vC.marvelPassedData = viewModel?.getSelecctedMarvelData(indexPath: (tableView.indexPathForSelectedRow)!)
+                if (MarvelData.conectionIsNotAvailable()){
+                    vC.noInternt = true
+                }else {
+                    vC.marvelPassedData = viewModel?.getSelecctedMarvelData(indexPath: (tableView.indexPathForSelectedRow)!)
+                }
             }
         }
     }

@@ -54,7 +54,6 @@ class MarvelData{
         // in all cases you need contxt to contact with CoreData
         creatContext()
         if (MarvelData.conectionIsNotAvailable()){
-            print("no Internet")
             // case if there is no internet
             getDataFromDBToMarvelList()
         }else{

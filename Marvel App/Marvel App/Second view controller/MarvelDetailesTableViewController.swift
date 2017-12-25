@@ -24,6 +24,8 @@ class MarvelDetailesTableViewController: UITableViewController,UICollectionViewD
     /// this is the main imageView outlet for the charchter
     @IBOutlet weak var imgMainCharchter: UIImageView!
     var viewModel:ViewModelSingleMarvel?
+    /// this variable will be set while segue by true value in case if no internet
+    var noInternt:Bool=false
     /// this is sette by the main view controller in prepare for segue
     var marvelPassedData:MarvelItem?{
         didSet{
