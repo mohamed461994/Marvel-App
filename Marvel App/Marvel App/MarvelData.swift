@@ -65,13 +65,20 @@ class MarvelData{
         }
     }
     /**
-     this function will be used to check if conection is available or not
+         this function will be used to check if conection is available or not
+         if not available it will return true else false
      */
         class func conectionIsNotAvailable()->Bool{
+            /// checking network using reachability FramWork return true if no internet
             let reachability:Reachability = Reachability.init()!
-        if ((reachability.connection) == .none){
-            return true
-        }
+            if ((reachability.connection) == .none){
+                return true
+            }
+            /// checking network using AlamoFire FramWork return true if no internet
+            let x = NetworkReachabilityManager()!
+            if !(x.isReachable){
+                return true
+            }
         return false
     }
     /**
@@ -131,12 +138,22 @@ class MarvelData{
     }
 }
 extension MarvelData {
+    /**
+         this function take one Marvel item its class that represent each charchter com back from API
+         and it will call function to store require for the first controller
+     */
     func insertToDataBase(item: MarvelItem, context: NSManagedObjectContext){
         MarvelEntity.insertToCoreDataIfNotInserted(marvelItem: item, context: context)
     }
+    /**
+      this function is used to get shared application view context variable
+     */
     func creatContext(){
         context=(UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     }
+    /**
+        this function will be called in case of there is no internet connection to retrive data from core data so app can work offline
+     */
     func getDataFromDBToMarvelList(){
         let list = MarvelEntity.getAllDataFromCoreData(context: context!)
         for marv in list!{
