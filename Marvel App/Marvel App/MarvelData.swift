@@ -11,10 +11,12 @@ import Foundation
 import Alamofire
 import SwiftHash
 import SwiftyJSON
+import CoreData
 /**
   this class is used to get data from JSON it takes two parameter url and search string in case if string = "" empty text thin it wont search in case if it has value it will used for searching
  */
 class MarvelData{
+    var context:NSManagedObjectContext?
     var marvelList:[MarvelItem]=[]
     /// this varible is to detect if request is from first view controller or not
     private var requestedFromFirstViewController = true
@@ -26,6 +28,10 @@ class MarvelData{
             /// push notification to reload data in first view controllet
             let notifiReload = Notification.Name(notificationForReloadTable)
             NotificationCenter.default.post(name: notifiReload, object: nil)
+            /// insert to data base
+            for charchter in marvelList {
+                insertToDataBase(item: charchter,context: context!)
+            }
         }
     }
     /// this variable used as parameter to API to load more data with an offset
@@ -42,6 +48,7 @@ class MarvelData{
     let utilityQueue=DispatchQueue.global(qos: .utility)
     init(url:String,searchText:String) {
         self.url = url
+        context=(UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
         addingParameters(searchText:searchText)
         getJSON()
     }
@@ -54,14 +61,15 @@ class MarvelData{
                let json = JSON(value)
                 let result = json["data"]["results"].arrayValue
                 for item in result{
-                    self.marvelList.append(MarvelItem(id: item["id"].intValue,
-                                  title: item["name"].stringValue,
-                                  description: item["description"].stringValue ,
-                                  img_URL: "\(item["thumbnail"]["path"].stringValue).\(item["thumbnail"]["extension"].stringValue)",
-                                  comics: self.getComicsEventsStoriesList(listJSON: item["comics"]["items"].arrayValue),
-                                  series: self.getComicsEventsStoriesList(listJSON: item["series"]["items"].arrayValue),
-                                  stories: self.getComicsEventsStoriesList(listJSON: item["series"]["items"].arrayValue),
-                                  events: self.getComicsEventsStoriesList(listJSON: item["events"]["items"].arrayValue)
+                    self.marvelList.append(MarvelItem(
+                        id: item["id"].intValue,
+                        title: item["name"].stringValue,
+                        description: item["description"].stringValue,
+                        img_URL: "\(item["thumbnail"]["path"].stringValue).\(item["thumbnail"]["extension"].stringValue)",
+                        comics: self.getComicsEventsStoriesList(listJSON: item["comics"]["items"].arrayValue),
+                        series: self.getComicsEventsStoriesList(listJSON: item["series"]["items"].arrayValue),
+                        stories: self.getComicsEventsStoriesList(listJSON: item["series"]["items"].arrayValue),
+                        events: self.getComicsEventsStoriesList(listJSON: item["events"]["items"].arrayValue)
                     ))
                 }
                 self.parseIsDone = true
@@ -98,5 +106,10 @@ class MarvelData{
             parameters!["nameStartsWith"] = searchText
             marvelList.removeAll()
         }
+    }
+}
+extension MarvelData {
+    func insertToDataBase(item: MarvelItem, context: NSManagedObjectContext){
+        MarvelEntity.insertToCoreDataIfNotInserted(marvelItem: item, context: context)
     }
 }
