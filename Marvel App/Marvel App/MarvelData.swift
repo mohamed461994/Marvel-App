@@ -48,7 +48,7 @@ class MarvelData{
     let utilityQueue=DispatchQueue.global(qos: .utility)
     init(url:String,searchText:String) {
         self.url = url
-        context=(UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+        creatContext()
         addingParameters(searchText:searchText)
         getJSON()
     }
@@ -111,5 +111,8 @@ class MarvelData{
 extension MarvelData {
     func insertToDataBase(item: MarvelItem, context: NSManagedObjectContext){
         MarvelEntity.insertToCoreDataIfNotInserted(marvelItem: item, context: context)
+    }
+    func creatContext(){
+        context=(UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     }
 }
