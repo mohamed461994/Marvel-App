@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ComicsList" representedClassName="ComicsList" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="charchter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DetailesEntity" inverseName="comic" inverseEntity="DetailesEntity" syncable="YES"/>
+    </entity>
+    <entity name="DetailesEntity" representedClassName="DetailesEntity" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="comic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ComicsList" inverseName="charchter" inverseEntity="ComicsList" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventsList" inverseName="charchter" inverseEntity="EventsList" syncable="YES"/>
+        <relationship name="serie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SeriesList" inverseName="charchter" inverseEntity="SeriesList" syncable="YES"/>
+        <relationship name="story" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StoriesList" inverseName="charchter" inverseEntity="StoriesList" syncable="YES"/>
+    </entity>
+    <entity name="EventsList" representedClassName="EventsList" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="charchter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DetailesEntity" inverseName="event" inverseEntity="DetailesEntity" syncable="YES"/>
+    </entity>
     <entity name="MarvelEntity" representedClassName="MarvelEntity" syncable="YES">
         <attribute name="detailes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="imgURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="SeriesList" representedClassName="SeriesList" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="charchter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DetailesEntity" inverseName="serie" inverseEntity="DetailesEntity" syncable="YES"/>
+    </entity>
+    <entity name="StoriesList" representedClassName="StoriesList" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="charchter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DetailesEntity" inverseName="story" inverseEntity="DetailesEntity" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="MarvelEntity" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="MarvelEntity" positionX="2716" positionY="-477" width="128" height="103"/>
+        <element name="DetailesEntity" positionX="2403" positionY="-432" width="128" height="133"/>
+        <element name="ComicsList" positionX="2293" positionY="-216" width="128" height="73"/>
+        <element name="SeriesList" positionX="2223" positionY="-459" width="128" height="73"/>
+        <element name="StoriesList" positionX="2590" positionY="-229" width="128" height="58"/>
+        <element name="EventsList" positionX="2572" positionY="-513" width="128" height="73"/>
     </elements>
 </model>

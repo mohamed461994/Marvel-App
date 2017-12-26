@@ -24,6 +24,16 @@
 		D9B09FF61FF1116400984217 /* MarvelEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B09FF41FF1116400984217 /* MarvelEntity+CoreDataClass.swift */; };
 		D9B09FF71FF1116400984217 /* MarvelEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B09FF51FF1116400984217 /* MarvelEntity+CoreDataProperties.swift */; };
 		D9C3F0D01FEEEE6C00B620FE /* MarveDetailesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C3F0CF1FEEEE6C00B620FE /* MarveDetailesData.swift */; };
+		D9ED44DB1FF1AAB400B192D2 /* DetailesEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ED44D11FF1AAB400B192D2 /* DetailesEntity+CoreDataClass.swift */; };
+		D9ED44DC1FF1AAB400B192D2 /* DetailesEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ED44D21FF1AAB400B192D2 /* DetailesEntity+CoreDataProperties.swift */; };
+		D9ED44DD1FF1AAB400B192D2 /* EventsList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ED44D31FF1AAB400B192D2 /* EventsList+CoreDataClass.swift */; };
+		D9ED44DE1FF1AAB400B192D2 /* EventsList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ED44D41FF1AAB400B192D2 /* EventsList+CoreDataProperties.swift */; };
+		D9ED44DF1FF1AAB400B192D2 /* SeriesList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ED44D51FF1AAB400B192D2 /* SeriesList+CoreDataClass.swift */; };
+		D9ED44E01FF1AAB400B192D2 /* SeriesList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ED44D61FF1AAB400B192D2 /* SeriesList+CoreDataProperties.swift */; };
+		D9ED44E11FF1AAB400B192D2 /* StoriesList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ED44D71FF1AAB400B192D2 /* StoriesList+CoreDataClass.swift */; };
+		D9ED44E21FF1AAB400B192D2 /* StoriesList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ED44D81FF1AAB400B192D2 /* StoriesList+CoreDataProperties.swift */; };
+		D9ED44E31FF1AAB400B192D2 /* ComicsList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ED44D91FF1AAB400B192D2 /* ComicsList+CoreDataClass.swift */; };
+		D9ED44E41FF1AAB400B192D2 /* ComicsList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ED44DA1FF1AAB400B192D2 /* ComicsList+CoreDataProperties.swift */; };
 		E71E022C6B51672889BD55EF /* Pods_Marvel_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AA647115CF293FDF45E0BD /* Pods_Marvel_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +59,16 @@
 		D9B09FF41FF1116400984217 /* MarvelEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarvelEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D9B09FF51FF1116400984217 /* MarvelEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarvelEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D9C3F0CF1FEEEE6C00B620FE /* MarveDetailesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarveDetailesData.swift; sourceTree = "<group>"; };
+		D9ED44D11FF1AAB400B192D2 /* DetailesEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailesEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D9ED44D21FF1AAB400B192D2 /* DetailesEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailesEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D9ED44D31FF1AAB400B192D2 /* EventsList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D9ED44D41FF1AAB400B192D2 /* EventsList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D9ED44D51FF1AAB400B192D2 /* SeriesList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SeriesList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D9ED44D61FF1AAB400B192D2 /* SeriesList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SeriesList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D9ED44D71FF1AAB400B192D2 /* StoriesList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoriesList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D9ED44D81FF1AAB400B192D2 /* StoriesList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoriesList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D9ED44D91FF1AAB400B192D2 /* ComicsList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicsList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D9ED44DA1FF1AAB400B192D2 /* ComicsList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicsList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E620E3A1C6EC9533220A58B0 /* Pods-Marvel App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel App/Pods-Marvel App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +150,16 @@
 		D9B09FF81FF1117500984217 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				D9ED44D11FF1AAB400B192D2 /* DetailesEntity+CoreDataClass.swift */,
+				D9ED44D21FF1AAB400B192D2 /* DetailesEntity+CoreDataProperties.swift */,
+				D9ED44D31FF1AAB400B192D2 /* EventsList+CoreDataClass.swift */,
+				D9ED44D41FF1AAB400B192D2 /* EventsList+CoreDataProperties.swift */,
+				D9ED44D51FF1AAB400B192D2 /* SeriesList+CoreDataClass.swift */,
+				D9ED44D61FF1AAB400B192D2 /* SeriesList+CoreDataProperties.swift */,
+				D9ED44D71FF1AAB400B192D2 /* StoriesList+CoreDataClass.swift */,
+				D9ED44D81FF1AAB400B192D2 /* StoriesList+CoreDataProperties.swift */,
+				D9ED44D91FF1AAB400B192D2 /* ComicsList+CoreDataClass.swift */,
+				D9ED44DA1FF1AAB400B192D2 /* ComicsList+CoreDataProperties.swift */,
 				D9B09FF41FF1116400984217 /* MarvelEntity+CoreDataClass.swift */,
 				D9B09FF51FF1116400984217 /* MarvelEntity+CoreDataProperties.swift */,
 				D99625171FECE59F000759BE /* Marvel_App.xcdatamodeld */,
@@ -289,16 +319,26 @@
 				D9A13CE51FED4D3E00126B95 /* MarvelTableViewCell.swift in Sources */,
 				D99625191FECE59F000759BE /* Marvel_App.xcdatamodeld in Sources */,
 				D99625131FECE59F000759BE /* ViewController.swift in Sources */,
+				D9ED44E01FF1AAB400B192D2 /* SeriesList+CoreDataProperties.swift in Sources */,
 				D9A13CE71FED7DFA00126B95 /* MarvelDetailesTableViewController.swift in Sources */,
 				D99625291FECE684000759BE /* MarvelData.swift in Sources */,
+				D9ED44DB1FF1AAB400B192D2 /* DetailesEntity+CoreDataClass.swift in Sources */,
+				D9ED44E31FF1AAB400B192D2 /* ComicsList+CoreDataClass.swift in Sources */,
 				D9C3F0D01FEEEE6C00B620FE /* MarveDetailesData.swift in Sources */,
 				D9A13CE31FED34AF00126B95 /* MarvelItem.swift in Sources */,
+				D9ED44DC1FF1AAB400B192D2 /* DetailesEntity+CoreDataProperties.swift in Sources */,
 				D99625271FECE666000759BE /* ViewModel.swift in Sources */,
 				D9B09FF71FF1116400984217 /* MarvelEntity+CoreDataProperties.swift in Sources */,
 				D904DEAF1FEDC66200C2D317 /* MarvelCollectionViewCell.swift in Sources */,
 				D99625111FECE59F000759BE /* AppDelegate.swift in Sources */,
+				D9ED44E41FF1AAB400B192D2 /* ComicsList+CoreDataProperties.swift in Sources */,
+				D9ED44DE1FF1AAB400B192D2 /* EventsList+CoreDataProperties.swift in Sources */,
+				D9ED44DF1FF1AAB400B192D2 /* SeriesList+CoreDataClass.swift in Sources */,
 				D9B09FF61FF1116400984217 /* MarvelEntity+CoreDataClass.swift in Sources */,
+				D9ED44DD1FF1AAB400B192D2 /* EventsList+CoreDataClass.swift in Sources */,
+				D9ED44E21FF1AAB400B192D2 /* StoriesList+CoreDataProperties.swift in Sources */,
 				D90CEEA61FEEA86500AB1C25 /* ViewModelSingleMarvel.swift in Sources */,
+				D9ED44E11FF1AAB400B192D2 /* StoriesList+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

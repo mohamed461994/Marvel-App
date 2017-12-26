@@ -4,8 +4,6 @@
 //
 //  Created by MohamedSh on 12/22/17.
 //  Copyright © 2017 MohamedSh. All rights reserved.
-//
-
 import UIKit
 import Kingfisher
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
@@ -124,5 +122,4 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             viewModel?.loadMoreData()
         }
     }
-
 }
