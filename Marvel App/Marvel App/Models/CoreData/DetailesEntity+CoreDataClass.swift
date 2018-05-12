@@ -12,9 +12,9 @@ import CoreData
 
 @objc(DetailesEntity)
 public class DetailesEntity: NSManagedObject {
-    class func insertToCoreDataIfNotInserted(context:NSManagedObjectContext,title:String){
-        let request:NSFetchRequest<DetailesEntity>=DetailesEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "title = %@",title)
+    class func insertToCoreDataIfNotInserted(context: NSManagedObjectContext, title: String){
+        let request: NSFetchRequest<DetailesEntity> = DetailesEntity.fetchRequest()
+        request.predicate = NSPredicate(format: "title = %@", title)
         if let _ = (try? context.fetch(request).first)as? DetailesEntity{
             
         }else{

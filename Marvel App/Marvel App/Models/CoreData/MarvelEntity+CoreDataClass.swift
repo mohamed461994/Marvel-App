@@ -15,12 +15,12 @@ public class MarvelEntity: NSManagedObject {
     /**
      this function will insert information of marvels if its not inserted befor
      */
-    class func insertToCoreDataIfNotInserted(marvelItem: MarvelItem,context:NSManagedObjectContext){
-        let request:NSFetchRequest<MarvelEntity>=MarvelEntity.fetchRequest()
+    class func insertToCoreDataIfNotInserted(marvelItem: MarvelItem, context: NSManagedObjectContext) {
+        let request:NSFetchRequest<MarvelEntity> = MarvelEntity.fetchRequest()
         request.predicate = NSPredicate(format: "title = %@",marvelItem.title!)
         if let _ = (try? context.fetch(request).first)as? MarvelEntity{
             
-        }else{
+        }else {
             //print("was not Aded befor")
             let marv = MarvelEntity(context: context)
             marv.id = Int64(marvelItem.id!)
@@ -33,9 +33,10 @@ public class MarvelEntity: NSManagedObject {
     /**
      this function return all data from the marvel entiy
      */
-    class func getAllDataFromCoreData(context:NSManagedObjectContext)->[MarvelEntity]?{
+    class func getAllDataFromCoreData(context:NSManagedObjectContext)->[MarvelEntity]? {
+        
         let fetchReq:NSFetchRequest<MarvelEntity> = MarvelEntity.fetchRequest()
-        if let listOfMarvData = try? context.fetch(fetchReq){
+        if let listOfMarvData = try? context.fetch(fetchReq) {
             return listOfMarvData
         }
         return nil
